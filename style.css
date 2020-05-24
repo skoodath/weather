@@ -17,7 +17,7 @@ body {
   height: 100vh;
   width: 100%;
   filter: blur(5px);
-  overflow: hidden;
+  overflow: auto;
 }
 
 .weather {
@@ -115,7 +115,7 @@ body {
 .weather__xtracontainer {
   width: 340px;
   height: 250px;
-  overflow: hidden;
+  overflow: auto;
   margin: 0 10px;
 }
 
