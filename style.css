@@ -452,7 +452,7 @@ body {
     grid-row: 2/span 3;
   }
 }
-@media screen and (max-height: 300px) {
+@media screen and (max-height: 500px) {
   .weather__cityinput {
     position: absolute;
     width: 100%;
