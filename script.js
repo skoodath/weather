@@ -91,7 +91,7 @@ window.addEventListener('load', ()=>{
             cmisc.classList.add("weather__misc_bglite");
             //fcst.classList.add('weather__forecast_bglite');
         }     
-        cdesc.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png"
+        cdesc.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png"
                          alt ="${weatherData.weather[0].description}"> <span>${weatherData.weather[0].description}</span>`;
         
         

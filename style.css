@@ -10,7 +10,7 @@ body {
 }
 
 .overlay {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4)), url("/bg1.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4)), url("../bg1.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
