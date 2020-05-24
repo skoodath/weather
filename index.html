@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <main class="weather">
+
+        <section class="weather__current">
+            <div class="weather__date"></div>
+            <div class="weather__cityinput weather__cityinput_error">
+                <label for="city">City Name</label>
+                <input type="text" name="city" autocomplete="true">
+                <span id="errordisplay" class="weather__error"></span>
+            </div>
+            <div class="weather__city clear"></div>
+            <div class="weather__temp clear"></div>
+            <div class="weather__xtracontainer">
+                <div class="weather__xtraslide">
+                    <div class="weather__extra weather__xtra_grid">
+                        <div class="weather__desc clear extra"></div>
+                        <div class="weather__misc extra">
+                            <div class="weather__loc clear"></div>
+                            <div class="weather__rlfl clear"></div>
+                            <div class="weather__max clear"></div>
+                            <div class="weather__min clear"></div>
+                        </div>
+                    </div>
+                    <!-- <div class="weather__forecast clear weather__forecast_none">
+                        <div class="forecast__left clear"></div>
+                        <div class="forecast__right clear"></div>
+                    </div> -->
+                </div>
+            </div>
+           <!--  <button class="weather__switch">Forecast</button> -->
+        </section>
+       
+        
+    </main>
+   
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
