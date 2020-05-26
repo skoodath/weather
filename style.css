@@ -424,7 +424,7 @@ body {
     grid-row: 9/span 1;
   }
 }
-@media screen and (max-height: 25em) {
+@media screen and (min-width: 30em) and (max-height: 25em) {
   .weather__current {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 50px repeat(7, auto);
