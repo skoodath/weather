@@ -45,7 +45,7 @@ window.addEventListener('load', ()=>{
         let cwidth = document.querySelector('.weather');
         
         let urlWeather = `${api.baseurl}weather?q=${citInput.value}&appid=${api.key}&units=imperial`;
-        let urlForecast = `${api.baseurl}forecast?q=${citInput.value}&appid=${api.key}&units=imperial`;
+        //let urlForecast = `${api.baseurl}forecast?q=${citInput.value}&appid=${api.key}&units=imperial`;
         let weatherdesc = document.querySelector('.weather__desc');
         let weathermisc = document.querySelector('.weather__misc');
         let tempinput = document.querySelector('.phone__type');
