@@ -1,3 +1,4 @@
+//populate date on top
 window.addEventListener('load', ()=>{
     //let switchbtn = document.querySelector('.weather__switch');
     let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -14,20 +15,49 @@ window.addEventListener('load', ()=>{
             });
 
     currentdt.innerHTML = `<span>${dtfmt}</span>`;
+    //showForecastdate(cdate);
 });
+
+//declare base url and api key for api call
 
     const api = {
         key: `301063ece3c24814a1f7ea252290ef1a`,
         baseurl: `https://api.openweathermap.org/data/2.5/`
         }
     let citInput = document.querySelector(".weather__cityinput input");
-    const getWeather = () => {
 
+//Populate next five dates for forecast
+/* const showForecastdate = (initialdt) => {
+    let dtfield = document.querySelector('.forecast__left');
+    let listfield = document.querySelector('.forecast__left ul');
+        listfield.setAttribute("class", "forecast__dt");
+    let thisDay = new Date();
+    for (let i = 1; i <= 5; i++) {
+        thisDay.setDate(initialdt.getDate() + i);
+        let fDate = document.createElement('li');
+        fDate.innerHTML = thisDay.toLocaleDateString("en-us", { month: "short", day: "numeric", year: "numeric" });
+        listfield.appendChild(fDate);
+    }
+ */
+
+//API call to get weather information
+    const getWeather = () => {
+        let cwidth = document.querySelector('.weather');
+        
         let urlWeather = `${api.baseurl}weather?q=${citInput.value}&appid=${api.key}&units=imperial`;
-        //let urlForecast = `${api.baseurl}forecast?q=${citInput.value}&appid=${api.key}&units=imperial`;
+        let urlForecast = `${api.baseurl}forecast?q=${citInput.value}&appid=${api.key}&units=imperial`;
         let weatherdesc = document.querySelector('.weather__desc');
         let weathermisc = document.querySelector('.weather__misc');
+        let tempinput = document.querySelector('.phone__type');
 
+        if(cwidth.clientWidth < 480){
+            tempinput.classList.add("phone__type_show");
+        }
+        else {
+            tempinput.classList.remove("phone__type_show");
+        }
+
+        tempinput.value = citInput.value;
         if(event.keyCode === 13) {
             weatherdesc.classList.remove('weather__desc_bglite', 'weather__desc_bgdark');
             weathermisc.classList.remove('weather__misc_bglite', 'weather__misc_bgdark');
@@ -50,10 +80,13 @@ window.addEventListener('load', ()=>{
                     }
             }); */
             citInput.value = "";
+            tempinput.value ="";
+            tempinput.classList.remove("phone__type_show");
             }
         
-            }
+        }
 
+//function to display weather details on the page
     const showWeather = (weatherData) => {
         let ccity = document.querySelector('.weather__city');
         let ctemp = document.querySelector('.weather__temp');
@@ -100,47 +133,34 @@ window.addEventListener('load', ()=>{
         maxt.innerHTML = `<span>Max</span><span>${f_max}&deg;F &#124; ${c_max}&deg;C</span>`;
         mint.innerHTML = `<span>Min</span><span>${f_min}&deg;F &#124; ${c_min}&deg;C</span>`;
 }
-
-/*const showForecast = (forecast) => {
-    
-    let dtfield = document.querySelector('.forecast__left');
-        dtfield.innerHTML = "";
+//function to display forecast details on the page
+/* const showForecast = (forecast) => {
+    let dtlist = forecast.list;
+    let dtlistItem = document.querySelectorAll('.forecast__dt li');
     let temfield = document.querySelector('.forecast__right');
         temfield.innerHTML = "";
-    let dtlist = forecast.list;
-    let listfield = document.createElement('ul');
-        listfield.innerHTML = `<li>Date</li>`;
-    let templist = document.createElement('ul');
-        templist.innerHTML = `<li>Max &#124; Min</li>`;
-        temfield.appendChild(templist);
-        dtfield.appendChild(listfield);
-    let dtarr = dtlist.map((d, maxt) => {
-       return [d.dt, maxt.main.temp_max];
-    });
-    console.log(dtarr);
-    let aSet = [...new Set(dtarr)];
-    console.log(aSet);
-    let maxTemp = dtlist.map(mt => {
-       return parseInt(mt.main.temp_max);
-    });
-    console.log(maxTemp);
-    for (let i = 1; i <aSet.length; i++){
-        
-    }
-    for (let i = 1; i < aSet.length; i++){
-        let listItem = document.createElement("li");
-            listItem.innerHTML = aSet[i];
-            listItem.setAttribute('id', "fdate");
-            listfield.appendChild(listItem);
-
-        if(dtlist[i].dt_txt.includes("15:00:00")){});
-            if(dtlist[i].dt_txt.includes("03:00:00")){
-                temps.innerHTML += `${dtlist[i].main.temp_min}&deg;F`;
+        console.log(forecast.list);
+        //listfield.innerHTML = `<li>Date</li>`;
+        let dtDate = dtlist.map(dts => {
+            return [new Date(dts.dt * 1000).toLocaleString("en-us", {
+                month: "short",
+                day: "numeric",
+                year: "numeric"
+            }), dts.main.temp_min, dts.main.temp_max];
+        });
+        let aSet = [...new Set(dtDate)];
+        for (let i = 1; i < dtlistItem.length; i++){
+            for (let j = 1; j < dtDate.length; j++){
+                if (dtlistItem[i].innerHTML === dtDate[j][0]){
+                    dtDate[j]
+                    .map(maxtemp => maxtemp)
+                    .filter(mxtmp => Ma)
                 }
             }
         }
-    
-    }*/
+    } */
+
+//error message display function
 
 const showError = (msg) => {
     let clearAll = document.querySelectorAll('.clear');
@@ -158,8 +178,12 @@ const showError = (msg) => {
     }, 3000);
 }
 
+//event listener to make the api call
 
 citInput.addEventListener("keypress", getWeather);
+
+//switch button to swap between forecast and weather
+
 /* let switchbtn = document.querySelector('.weather__switch');
 
 switchbtn.addEventListener('click', () => {
