@@ -442,7 +442,7 @@ body {
     font-size: 1.2em;
   }
 }
-@media screen and (min-width: 30em) and (max-height: 38em) {
+@media screen and (min-width: 30em) and (max-height: 36em) {
   .weather {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
