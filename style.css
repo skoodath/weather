@@ -106,7 +106,7 @@ body {
 }
 
 .weather__mode:checked {
-  background: var(--darkshadow);
+  background: var(--primarycolor);
   transition: 0.3s;
 }
 
