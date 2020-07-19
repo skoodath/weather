@@ -1,51 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="lite" class="transition">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="icon" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <!-- <div class="overlay"></div> -->
-    <main class="weather">
-        <input type="text" class="phone__type">
-        <section class="weather__current">
-            <div class="weather__date"></div>
-            <div class="weather__cityinput weather__cityinput_error">
-                <label for="city">City Name</label>
-                <input type="text" name="city" autocomplete="true">
-                <span id="errordisplay" class="weather__error"></span>
-            </div>
-            <div class="weather__city clear"></div>
-            <div class="weather__temp clear"></div>
-            <div class="weather__xtracontainer">
-                <div class="weather__xtraslide">
-                    <div class="weather__extra weather__xtra_grid">
-                        <div class="weather__desc clear extra"></div>
-                        <div class="weather__misc extra">
-                            <div class="weather__loc clear"></div>
-                            <div class="weather__rlfl clear"></div>
-                            <div class="weather__max clear"></div>
-                            <div class="weather__min clear"></div>
+    <div class="wrapper transit">
+        
+        <div class="weather transit">
+                <h1 class="weather__header">Weather Lookup</h1>
+                <div class="weather__modebox">
+                    <label for="colortheme">Lite</label>
+                    <input type="checkbox" class="weather__mode" name="colortheme" id="colortheme"/>
+                </div>
+            
+                <div class="weather__cityinput transit">
+                    <label for="city">City Name</label>
+                    <input type="text" name="city" autocomplete="on" id="city">
+                    <span id="errordisplay" class="weather__error"></span>
+                </div>
+                <div class="weather__city transit">
+                    <div class="weather__city_inner clear">
+
+                    </div>
+                </div>
+                <div class="weather__cdate transit">
+                    <span class="weather__week"></span>
+                    <span class="weather__date"></span>
+                    <!--<span class="weather__time"></span>-->
+                </div>  
+                <div class="weather__temp transit">
+                    <div class="weather__temp_inner">
+                        <div class="weather__temp_sub clear">
+                            <span class="weather__cel"></span>
+                            <span class="weather__fah"></span>
                         </div>
                     </div>
-                    <!-- <div class="weather__forecast clear weather__forecast_none">
-                        <div class="forecast__left">
-                            <ul>
-                                <li>Date</li>
-                            </ul>
-                        </div>
-                        <div class="forecast__right"></div>
-                    </div> -->
                 </div>
-            </div>
-           <!-- <button class="weather__switch">Forecast</button> -->
-        </section>
-       
-        
-    </main>
+                <div class="weather__real clear"></div>
+                <div class="weather__misc extra transit">
+                    <div class="weather__desc clear"></div>
+                    <div class="weather__icon clear"></div>
+                </div>
+
+        </div>
+    </div>
    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js" type="module"></script>
