@@ -10,22 +10,22 @@
 }
 
 :root[data-theme=lite] {
-  --primarybg: hsl(246, 100%, 96%);
-  --secondbg: rgb(236, 234, 255);
-  --thirdbg: rgb(121, 107, 255);
-  --liteshadow: hsl(240, 80%, 98%);
-  --darkshadow: hsl(246, 80%, 40%);
-  --primarycolor: rgb(39, 39, 39);
-  --dashborder: hsl(246, 80%, 40%);
+  --primarybg: hsl(230, 100%, 95%);
+  --secondbg: hsl(230, 100%, 95%);
+  --thirdbg: hsl(230, 50%, 65%);
+  --liteshadow: hsl(230, 80%, 98%);
+  --darkshadow: hsl(230, 7%, 65%);
+  --primarycolor: hsl(230, 5%, 20%);
+  --dashborder: hsl(230, 80%, 40%);
 }
 
 :root[data-theme=dark] {
-  --primarybg: rgb(39, 39, 39);
-  --secondbg: rgb(39, 39, 39);
-  --thirdbg: rgb(121, 107, 255);
-  --liteshadow: hsl(246, 30%, 35%);
-  --darkshadow: hsl(246, 30%, 12%);
-  --primarycolor: rgb(237, 235, 255);
+  --primarybg: hsl(230, 5%, 20%);
+  --secondbg: hsl(230, 5%, 20%);
+  --thirdbg: hsl(230, 50%, 65%);
+  --liteshadow: hsl(230, 10%, 30%);
+  --darkshadow: hsl(230, 20%, 10%);
+  --primarycolor: hsl(230, 100%, 95%);
   --dashborder: rgb(237, 235, 255);
 }
 
@@ -74,6 +74,7 @@ body {
   font-size: 1.2em;
   align-items: center;
   place-content: center;
+  text-transform: uppercase;
 }
 
 .weather__modebox {
