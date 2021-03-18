@@ -26,17 +26,18 @@ window.addEventListener('load', ()=>{
 
 
 //API call to get weather information
-    const getWeather = () => {
+    const getWeather = (event) => {
         let cwidth = document.querySelector('.weather');
         
         let urlWeather = `${api.baseurl}weather?q=${citInput.value}&appid=${api.key}&units=imperial`;
-        //let urlForecast = `${api.baseurl}forecast?q=${citInput.value}&appid=${api.key}&units=imperial`;
         let weatherdesc = document.querySelector('.weather__desc');
 
         if(event.keyCode === 13) {
 
-            axios.get(urlWeather)
-            .then (response => showWeather(response.data))
+            fetch(urlWeather)
+            //axios.get(urlWeather)
+            .then (response => response.json())
+            .then(data => showWeather(data) )
             .catch(error => {
             if(error.response){
                 let errorMessage = error.response.data.message;
