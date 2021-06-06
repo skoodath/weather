@@ -3,53 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Click Weather: For current weather in any city</title>
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="wrapper transit">
-        
-        <div class="weather transit">
-                <h1 class="weather__header">Click Weather</h1>
-                <div class="weather__modebox">
-                    <label for="colortheme">Lite</label>
-                    <input type="checkbox" class="weather__mode" name="colortheme" id="colortheme"/>
-                </div>
-            
-                <div class="weather__cityinput transit">
-                    <label for="city">City Name</label>
-                    <input type="text" name="city" autocomplete="on" id="city">
-                    <span id="errordisplay" class="weather__error"></span>
-                </div>
-                <div class="weather__city transit">
-                    <div class="weather__city_inner clear">
-
+    <div id="errordisplay" class="weather__error"></div>
+    <div class="wrapper"> 
+        <div class='inner'>
+            <div class="weather">
+                <nav class="top-navbar">
+                    <h1 class="weather__header">Click Weather</h1>
+                    <div class="weather__cityinput">
+                        <input type="text" name="city" autocomplete="on" id="city" placeholder="Enter city name" title="Type a city name and press enter or return">
                     </div>
-                </div>
-                <div class="weather__cdate transit">
-                    <span class="weather__week"></span>
-                    <span class="weather__date"></span>
-                    <!--<span class="weather__time"></span>-->
-                </div>  
-                <div class="weather__temp transit">
-                    <div class="weather__temp_inner">
-                        <div class="weather__temp_sub clear">
-                            <span class="weather__cel"></span>
-                            <span class="weather__fah"></span>
+                </nav>
+                
+                <div class='weather__location'>
+                    
+                    <div class='weather__city_wrapper'>
+                        
+                        <div class="weather__city">
+                            <div class="weather__city_inner clear">
+    
+                            </div>
+                        </div>
+                        <div class="weather__cdate">
+                            <span class="weather__week clear"></span>
+                            <span class="weather__date clear"></span>
+                            <!--<span class="weather__time"></span>-->
+                        </div>
+                    </div>
+                    <div class='weather__temp_group'>
+                        <div class="weather__temp">
+                            <div class="weather__temp_inner">
+                                <span class="weather__cel clear"></span>
+                                <span class="weather__fah clear"></span>
+                            </div>
+                        </div>
+                        <div class="weather__real clear"></div>
+                    </div>
+                    <div class='weather__climate'>
+                    
+                        <div class="weather__misc extra">
+                            <div class="weather__icon clear"></div>
+                            <div class="weather__desc clear"></div>
                         </div>
                     </div>
                 </div>
-                <div class="weather__real clear"></div>
-                <div class="weather__misc extra transit">
-                    <div class="weather__desc clear"></div>
-                    <div class="weather__icon clear"></div>
-                </div>
-
+                
+            </div>
         </div>
+        
     </div>
    
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
     <script src="script.js" type="module"></script>
 </body>
 </html>
